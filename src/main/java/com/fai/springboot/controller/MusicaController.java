@@ -32,7 +32,8 @@ public class MusicaController {
     public String getCreatePage(Model model) {
         Musica musicaModel = new Musica();
         model.addAttribute("musica", musicaModel);
-        return "piano/criar-musica";
+
+        return "musica/criar-musica";
     }
     @GetMapping("/detail/{id}")
     public String getdetailPage(@PathVariable int id, Model model) {
