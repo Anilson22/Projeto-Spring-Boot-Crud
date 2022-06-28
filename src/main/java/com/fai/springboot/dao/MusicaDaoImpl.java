@@ -2,6 +2,7 @@ package com.fai.springboot.dao;
 
 
 import com.fai.springboot.model.Musica;
+import com.fai.springboot.model.Piano;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -56,26 +57,54 @@ public class MusicaDaoImpl implements CrudDao<Musica> {
 
     @Override
     public List<Musica> list() {
+
         return Musicas;
     }
 
     @Override
     public int save(Musica entity) {
+        entity.setId(getNextID());
+        Musicas.add(entity);
         return 0;
     }
 
     @Override
     public Musica listById(int id) {
+        for (Musica musica: Musicas) {
+            if (musica.getId() == id) {
+                return musica;
+            }
+        }
         return null;
     }
 
     @Override
     public boolean update(Musica entity) {
-        return false;
+
+        for (Musica musica: Musicas){
+            if (musica.getId() == entity.getId()){
+                musica.setNome(entity.getNome());
+                musica.setGenero(entity.getGenero());
+                musica.setAno(entity.getAno());
+            }
+        }
+
+        return true;
     }
 
     @Override
     public boolean deleteById(int id) {
-        return false;
+        int ItemIndex = -1;
+        for (int i = 0; i < Musicas.size(); i++) {
+            Musica musica = Musicas.get(i);
+            if (musica.getId() == id) {
+                ItemIndex = i;
+                break;
+            }
+        }
+
+        if (ItemIndex == -1) return false;
+        Musicas.remove(ItemIndex);
+        return true;
     }
 }

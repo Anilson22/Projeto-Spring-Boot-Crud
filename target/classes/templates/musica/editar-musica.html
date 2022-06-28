@@ -17,15 +17,15 @@
 
             <div class="mt-4">
 
-                <form method="POST" th:action="@{/piano/update}" th:object="${piano}">
+                <form method="POST" th:action="@{/musica/update}" th:object="${musica}">
                     <div class="form-row">
 
                         <div class="form-group col-12">
-                            <label for="marca">Marca</label>
-                            <input th:field="${piano.marca}" type="text" id="marca" class="form-control" />
+                            <label for="nome">Nome</label>
+                            <input th:field="${musica.nome}" type="text" id="nome" class="form-control" />
 
-                            <label for="modelo">Modelo</label>
-                            <input th:field= "${piano.modelo}" type="text" id="modelo" class="form-control" />
+                            <label for="genero">Genero</label>
+                            <input th:field= "${musica.genro}" type="text" id="genero" class="form-control" />
 
 
                             <label for="ano">Ano</label>
@@ -35,7 +35,7 @@
                     </div>
 
                     <!-- NAO SE ESQUECAM de preencher este campo escondido do id -->
-                    <input type="hidden" th:field="${piano.id}"/>
+                    <input type="hidden" th:field="${music.id}"/>
 
 
                     <button type="submit" class="btn btn-danger col-12">Atualizar</button>

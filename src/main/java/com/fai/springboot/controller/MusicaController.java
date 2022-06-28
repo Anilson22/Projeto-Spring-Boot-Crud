@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
@@ -28,10 +29,29 @@ public class MusicaController {
     }
 
     @GetMapping("/create")
-    public String getCreatePage() {
-
-
+    public String getCreatePage(Model model) {
+        Musica musicaModel = new Musica();
+        model.addAttribute("musica", musicaModel);
         return "piano/criar-musica";
+    }
+    @GetMapping("/detail/{id}")
+    public String getdetailPage(@PathVariable int id, Model model) {
+        model.addAttribute("musica", musicaService.listById(id));
+
+        return "musica/detalhes-musica";
+    }
+
+    @GetMapping("/update")
+    public String getUpdatePage (Model model, Musica musica) {
+        musicaService.update(musica);
+        return getListPage(model);
+    }
+
+    @GetMapping("/edit/{id}")
+    public String getEditPage(@PathVariable int id, Model model){
+        model.addAttribute("musica", musicaService.listById(id));
+
+        return "/musica/editar-musica";
     }
 
 
