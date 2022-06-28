@@ -2,7 +2,6 @@ package com.fai.springboot.service;
 
 
 import com.fai.springboot.dao.MusicaDaoImpl;
-import com.fai.springboot.dao.PianoDaoImpl;
 import com.fai.springboot.model.Musica;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

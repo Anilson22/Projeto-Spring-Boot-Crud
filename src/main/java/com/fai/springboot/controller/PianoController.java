@@ -30,8 +30,8 @@ public class PianoController {
 
     @GetMapping("/create")
     public String getCreatePage(Model model){
-        Piano pianoModel = new Piano();
-        model.addAttribute("piano", pianoModel);
+        Piano piano = new Piano();
+        model.addAttribute("piano", piano);
         return "piano/criar-piano";
     }
 
@@ -55,7 +55,7 @@ public class PianoController {
     }
 
     @PostMapping("/save")
-    public String save(Model model, Piano piano){
+    public String save(Model model, Piano piano) {
         pianoService.save(piano);
         return getListPage(model);
     }
