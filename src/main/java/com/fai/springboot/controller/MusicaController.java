@@ -30,8 +30,8 @@ public class MusicaController {
 
     @GetMapping("/create")
     public String getCreatePage(Model model) {
-        Musica musicaModel = new Musica();
-        model.addAttribute("musica", musicaModel);
+        Musica musica = new Musica();
+        model.addAttribute("musica", musica);
 
         return "musica/criar-musica";
     }

@@ -22,6 +22,7 @@ public class MusicaServiceImpl implements CrudService<Musica> {
 
     @Override
     public int save(Musica entity) {
+
         return musicaDao.save(entity);
     }
 
@@ -36,7 +37,8 @@ public class MusicaServiceImpl implements CrudService<Musica> {
     }
 
     @Override
-    public boolean deleteById(int id) {
+    public boolean deleteById(int id)
+    {
         return musicaDao.deleteById(id);
     }
 }
