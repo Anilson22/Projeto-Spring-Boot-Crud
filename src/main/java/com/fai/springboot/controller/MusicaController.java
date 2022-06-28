@@ -41,17 +41,30 @@ public class MusicaController {
         return "musica/detalhes-musica";
     }
 
-    @GetMapping("/update")
-    public String getUpdatePage (Model model, Musica musica) {
-        musicaService.update(musica);
-        return getListPage(model);
-    }
-
     @GetMapping("/edit/{id}")
     public String getEditPage(@PathVariable int id, Model model){
         model.addAttribute("musica", musicaService.listById(id));
 
         return "/musica/editar-musica";
+    }
+
+    @GetMapping("/update")
+    public String update(Model model, Musica musica) {
+        musicaService.update(musica);
+        return getListPage(model);
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable int id, Model model) {
+        musicaService.deleteById(id);
+        return getListPage(model);
+    }
+
+    @GetMapping("/save")
+    public String save(Model model, Musica musica) {
+        musicaService.save(musica);
+
+        return getListPage(model);
     }
 
 
