@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Treinamento Prova" />
+        <module name="Projeto-Spring-Boot-Crud" />
         <module name="lds-prova-2o-bi" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Projeto-Spring-Boot-Crud" options="-parameters" />
       <module name="Treinamento Prova" options="-parameters" />
       <module name="lds-prova-2o-bi" options="-parameters" />
     </option>

@@ -25,6 +25,7 @@
                             <th scope="col">Genero</th>
                             <th scope="col"></th>
                             <th scope="col"></th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,6 +34,7 @@
                         <tr th:each="musica :${musica}">
                             <td  th:text="${musica.id}">2</td>
                             <td th:text="${musica.nome}">Yamaha</td>
+                            <td th:text="${musica.genero}">genero</td>
 
                             <!-- botao que deve EXIBIR os detalhes em uma nova pagina -->
                             <td>
