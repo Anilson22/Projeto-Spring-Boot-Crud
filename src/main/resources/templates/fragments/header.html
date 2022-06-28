@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+
+        <!-- inicio do HEADER -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-danger" th:fragment="header">
+            <a th:href="@{/}" class="navbar-brand">Prova de LDS</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                    aria-controls="navbar"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav mr-auto">
+
+                    <!-- link para pagina home -->
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/}">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+
+                    <!-- links para o menu de navegacao -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-piano" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">Pianos
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdown-piano">
+                            <a class="dropdown-item" th:href="@{/piano/create}">Criar</a>
+                            <a class="dropdown-item" th:href="@{/piano/list}">Listar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-musica" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">Musica
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdown-musica">
+                            <a class="dropdown-item" th:href="@{/musica/create}">Criar</a>
+                            <a class="dropdown-item" th:href="@{/musica/list}">Listar</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+        <!-- fim do HEADER -->
+
+    </body>
+</html>

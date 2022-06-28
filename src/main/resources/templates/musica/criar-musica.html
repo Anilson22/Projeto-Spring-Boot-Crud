@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}">
+    <head>
+        <meta charset="UTF-8">
+        <title>Anilson - Criar</title>
+    </head>
+    <body>
+
+        <div layout:fragment="body">
+        <!-- inicio do CRIAR -->
+            <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+                <h1 class="display-4">Registrar Musica</h1>
+                <p class="lead">Preencha o formulário abaixo.</p>
+
+                <hr>
+
+                <div class="mt-4">
+                    <form method="POST" th:action="@{/piano/save}" th:object="${piano}">
+                        <div class="form-row">
+
+                            <div class="form-group col-12">
+                                <label for="marca">Nome</label>
+                                <input th:field="${piano.marca}" type="text" id="marca" class="form-control"/>
+
+                                <label for="modelo">Genero</label>
+                                <input th:field="${piano.modelo}" type="text" id="modelo" class="form-control"/>
+
+
+                                <label for="ano">Ano</label>
+                                <input th:field="${piano.ano}" type="number" id="ano" class="form-control"/>
+
+                            </div>
+                        </div>
+
+                    <button type="submit" class="btn btn-danger col-12">Criar Musica</button>
+
+                </form>
+                </div>
+            </div>
+        <!-- fim do CRIAR -->
+    </div>
+
+        </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}">
+    <head>
+        <meta charset="UTF-8">
+        <title>Enthony - Detalhes</title>
+    </head>
+    <body>
+
+        <div layout:fragment="body">
+
+        <!-- inicio do DETALHES -->
+            <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-4">Detalhes</h1>
+            <p class="lead">Detalhes</p>
+
+            <hr>
+
+            <div class="mt-4">
+
+                <!-- inicio da tabela -->
+                <table class="table table-hover">
+                    <thead class="bg-danger text-light">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Marca</th>
+                            <th scope="col">Modelo</th>
+                            <th scope="col">Ano</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <!-- inicio -->
+                        <tr >
+                            <td th:text="${piano.id}">2</td>
+                            <td th:text="${piano.marca}">Yamaha</td>
+                            <td th:text="${piano.modelo}">CLP-765GP</td>
+                            <td th:text="${piano.ano}">2021</td>
+                        </tr>
+                        <!-- fim -->
+
+                    </tbody>
+                </table>
+                <!-- fim da tabela -->
+
+
+            </div>
+        </div>
+        <!-- fim do DETALHES -->
+
+        </div>
+
+
+    </body>
+</html>

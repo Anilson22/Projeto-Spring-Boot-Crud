@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}">
+    <head>
+        <meta charset="UTF-8">
+        <title>Enthony - Listar</title>
+    </head>
+    <body>
+
+        <div layout:fragment="body" >
+        <!-- inicio do LISTAR -->
+            <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-4">Listar</h1>
+            <p class="lead">Lista de itens cadastrados.</p>
+
+            <hr>
+
+            <div class="mt-4">
+
+                <!-- inicio da tabela -->
+                <table class="table table-hover">
+                    <thead class="bg-danger text-light">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Marca</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <!-- inicio -->
+                        <tr th:each="piano :${piano}">
+                            <td  th:text="${piano.id}">2</td>
+                            <td th:text="${piano.marca}">Yamaha</td>
+
+                            <!-- botao que deve EXIBIR os detalhes em uma nova pagina -->
+                            <td>
+                                <a class="btn btn-info btn-sm"
+                                   th:href="@{/piano/detail/{id} (id=${piano.id})}"
+                                   role="button">Detalhes
+                                </a>
+                            </td>
+
+                            <!-- botao que deve EDITAR os detalhes em uma nova pagina -->
+                            <td>
+                                <a class="btn btn-warning btn-sm"
+                                   th:href="@{/piano/edit/{id} (id=${piano.id})}"
+                                   role="button">Editar
+                                </a>
+                            </td>
+
+                            <!-- botao que deve EXCLUIR o piano -->
+                            <td>
+                                <a class="btn btn-danger btn-sm"
+                                   th:href="@{/piano/delete/{id} (id=${piano.id})}"
+                                   role="button">Excluir
+                                </a>
+                            </td>
+
+                        </tr>
+                        <!-- fim -->
+
+                    </tbody>
+                </table>
+                <!-- fim da tabela -->
+
+            </div>
+        </div>
+        <!-- fim do LISTAR -->
+
+        </div>
+
+    </body>
+</html>
